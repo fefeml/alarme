@@ -23,7 +23,9 @@ import { MemoPage } from '../pages/memo/memo';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      hours: ['1','2','3','4','5','6','7','8','9','10','11','12']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,3 +43,4 @@ import { MemoPage } from '../pages/memo/memo';
   ]
 })
 export class AppModule {}
+
