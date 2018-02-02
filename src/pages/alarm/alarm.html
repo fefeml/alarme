@@ -20,6 +20,8 @@
         <ion-datetime displayFormat="HH:mm a" pickerFormat="HH mm a" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
 
+      
+
     <ion-list>
 
         <ion-item>
@@ -38,4 +40,7 @@
         </ion-item>
       
       </ion-list>
+
+      <button ion-button (click)='setAlarm()' >Set</button>
+      <button ion-button (click)='stopAlarm()'>Stop</button>
 </ion-content>

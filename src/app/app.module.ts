@@ -7,6 +7,8 @@ import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AlarmPage } from '../pages/alarm/alarm';
@@ -37,6 +39,7 @@ import { MemoPage } from '../pages/memo/memo';
     TabsPage,
   ],
   providers: [
+    LocalNotifications,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
