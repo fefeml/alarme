@@ -41,6 +41,7 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
     TabsPage,
   ],
   providers: [
+    DeviceMotion,
     LocalNotifications,
     StatusBar,
     SplashScreen,
