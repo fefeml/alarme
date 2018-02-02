@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+<<<<<<< HEAD
+=======
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
+>>>>>>> deb1313fdbb0b1ff41e750d8923db96345609abf
 
 /**
  * Generated class for the AlarmPage page.
@@ -69,13 +74,27 @@ export class AlarmPage {
   }
   stopAlarm() {
     this.sound.pause();
+    console.log("ACABOOOOOOOUUUUUUU.. EEE TETRAAAAAA")
   }
   alarmHandler() {
+<<<<<<< HEAD
     this.sound.play(); 
 
 
   }
   
 
+=======
+    this.sound.play();
+    let subscription = this.deviceMotion.watchAcceleration().subscribe((acceleration: DeviceMotionAccelerationData) => {
+      console.log(acceleration);
+      if (acceleration.x >=Math.abs(8) || acceleration.y >=Math.abs(8) || acceleration.z >=Math.abs(8)){
+        this.stopAlarm()
+      }
+  });
+>>>>>>> deb1313fdbb0b1ff41e750d8923db96345609abf
 }
 
+
+
+}

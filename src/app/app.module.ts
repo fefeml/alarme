@@ -44,6 +44,7 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
     LocalNotifications,
     StatusBar,
     SplashScreen,
+    DeviceMotion,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
