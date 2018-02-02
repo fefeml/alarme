@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-<<<<<<< HEAD
-=======
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
->>>>>>> deb1313fdbb0b1ff41e750d8923db96345609abf
+
 
 /**
  * Generated class for the AlarmPage page.
@@ -27,7 +25,7 @@ export class AlarmPage {
   Girar;
   sound = new Audio('assets/railroad_crossing_bell.mp3');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications, public deviceMotion: DeviceMotion) {
   }
 
   ionViewDidLoad() {
@@ -77,14 +75,7 @@ export class AlarmPage {
     console.log("ACABOOOOOOOUUUUUUU.. EEE TETRAAAAAA")
   }
   alarmHandler() {
-<<<<<<< HEAD
-    this.sound.play(); 
 
-
-  }
-  
-
-=======
     this.sound.play();
     let subscription = this.deviceMotion.watchAcceleration().subscribe((acceleration: DeviceMotionAccelerationData) => {
       console.log(acceleration);
@@ -92,7 +83,7 @@ export class AlarmPage {
         this.stopAlarm()
       }
   });
->>>>>>> deb1313fdbb0b1ff41e750d8923db96345609abf
+
 }
 
 
