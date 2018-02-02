@@ -61,7 +61,7 @@ export class AlarmPage {
 
    this.localNotifications.on('trigger', () =>{
       
-    this.alarmHandler();
+    this.alarmHandler();  
     
    });
 
@@ -71,8 +71,7 @@ export class AlarmPage {
     this.sound.pause();
   }
   alarmHandler() {
-    this.sound.play();
-    
+    this.sound.play(); 
   }
   
 
