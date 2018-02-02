@@ -15,9 +15,10 @@
 
 <ion-content padding>
 
-    <ion-item class="vermelho">
-        <ion-label>Horario do alarme</ion-label>
-        <ion-datetime  displayFormat="HH:mm a" pickerFormat="HH mm a" [(ngModel)]="myDate"></ion-datetime>
+    <ion-item>
+        <ion-label>Clique para programar o alarme</ion-label>
+        <ion-datetime displayFormat="HH:mm a" pickerFormat="HH mm a" [(ngModel)]="myDate"></ion-datetime>
+
       </ion-item>
 
       
@@ -26,7 +27,7 @@
 
       <ion-item>
         <ion-label> Andar</ion-label>
-        <ion-toggle checked="false"></ion-toggle>
+        <ion-toggle></ion-toggle>
       </ion-item>
       
       <ion-item>
