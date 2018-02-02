@@ -26,14 +26,12 @@ export class AlarmPage {
   escrever:boolean;
   palavras = ['Paralelepípedo', 'Axioma', 'Brônquios', 'Tuberculose', 'Ecoturismo'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications, public alertCtrl: AlertController, public deviceMotion: DeviceMotion) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications, public deviceMotion: DeviceMotion, public alertCtrl) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlarmPage');
   }
-
-  
 
 
   //Setando o alarme
@@ -60,6 +58,8 @@ export class AlarmPage {
       alarmTime = new Date(`${ano}-0${mes}-0${dia}T${this.myDate}:00`);
     }
 
+
+
     this.localNotifications.schedule({
       id: 1,
       title: 'Alarm',
@@ -83,6 +83,7 @@ export class AlarmPage {
    this.localNotifications.on('trigger', () =>{
       
     this.alarmHandler(agitarAlarm, andarAlarm, escreverAlarm);
+
     
    });
 
@@ -138,6 +139,7 @@ export class AlarmPage {
     }
     
     
+
 
 
 
