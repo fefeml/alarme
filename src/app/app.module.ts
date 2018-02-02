@@ -13,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AlarmPage } from '../pages/alarm/alarm';
 import { MemoPage } from '../pages/memo/memo';
+import { AlertController } from 'ionic-angular';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
 
 @NgModule({
   declarations: [

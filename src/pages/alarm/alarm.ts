@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { DeviceMotion } from '@ionic-native/device-motion';
 
 /**
  * Generated class for the AlarmPage page.
@@ -22,12 +24,15 @@ export class AlarmPage {
   Girar;
   sound = new Audio('assets/railroad_crossing_bell.mp3');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public localNotifications: LocalNotifications, public alertCtrl: AlertController, public deviceMotion: DeviceMotion) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlarmPage');
   }
+
+
+  //Setando o alarme
 
   setAlarm() {
   
@@ -47,8 +52,6 @@ export class AlarmPage {
       alarmTime = new Date(`${ano}-0${mes}-0${dia}T${this.myDate}:00`);
     }
 
-
-
     this.localNotifications.schedule({
       id: 1,
       title: 'Alarm',
@@ -58,6 +61,17 @@ export class AlarmPage {
       icon: 'assets/fundo-noite.jpg',
     
    });  
+
+   //Alerta Alarme ativo
+
+
+    let alert = this.alertCtrl.create({
+      title: 'Alarme ativado!',
+      buttons: ['OK']
+    });
+    alert.present();
+
+   //Disparar alarme
 
    this.localNotifications.on('trigger', () =>{
       
