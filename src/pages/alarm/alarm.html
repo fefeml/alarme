@@ -16,7 +16,7 @@
 <ion-content padding>
 
     <ion-item>
-        <ion-label>Date</ion-label>
+        <ion-label>Horario Do Alarme</ion-label>
         <ion-datetime displayFormat="HH:mm a" pickerFormat="HH mm a" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
 
@@ -26,21 +26,22 @@
 
       <ion-item>
         <ion-label> Andar</ion-label>
-        <ion-toggle checked="false"></ion-toggle>
+        <ion-toggle [(ngModel)]="andar" ></ion-toggle>
       </ion-item>
       
       <ion-item>
         <ion-label> Agitar</ion-label>
-        <ion-toggle checked="false"></ion-toggle>
+        <ion-toggle checked="false" [(ngModel)]="agitar"></ion-toggle>
       </ion-item>
       
       <ion-item>
         <ion-label> Escrever</ion-label>
-        <ion-toggle checked="false"></ion-toggle>
+        <ion-toggle checked="false" [(ngModel)]="escrever"></ion-toggle>
       </ion-item>
       
       </ion-list>
-
+      <div class="buttons">
       <button ion-button (click)='setAlarm()' >Set</button>
       <button ion-button (click)='stopAlarm()'>Stop</button>
+    </div>
 </ion-content>

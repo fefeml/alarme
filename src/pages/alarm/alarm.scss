@@ -1,3 +1,6 @@
-page-alarm {
-
+page-alarm {    
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+    }
 }
